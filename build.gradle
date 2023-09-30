@@ -16,6 +16,57 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+
+	flatDir {
+		dirs 'lib'
+	}
+
+	// Cloth Config
+	maven {
+		url "https://maven.shedaniel.me/"
+	}
+
+	// Trinkets, Cloth Config
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
+
+	// Trinkets
+	maven {
+		name = "Ladysnake Libs"
+		url = 'https://maven.ladysnake.org/releases'
+	}
+
+	// Spell Power, Spell Engine
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
+
+	// Player Animator
+	maven {
+		name "KosmX's maven"
+		url 'https://maven.kosmx.dev/'
+	}
+
+	// Gecko Lib
+	maven {
+		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+	}
+
+	// Mixin Extras
+	maven {
+		url 'https://jitpack.io'
+	}
+
+	// Owo
+	maven {
+		url 'https://maven.wispforest.io'
+	}
 }
 
 loom {
@@ -38,11 +89,65 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
-	// Uncomment the following line to enable the deprecated Fabric API modules. 
-	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
-	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	// Spell Engine
+	modImplementation("maven.modrinth:spell-engine:${project.spell_engine_version}")
+
+	// Spell Power
+	modImplementation("maven.modrinth:spell-power:${project.spell_power_version}")
+
+	// Cloth Config
+	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+
+	// BamCore
+	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
+
+	// Trinkets
+	modImplementation "lib:better_adventure_mod_core:0.0.1"
+
+	// Gecko Lib
+	modImplementation "software.bernie.geckolib:geckolib-fabric-1.20.1:${project.gecko_lib_version}"
+
+	// Player Animation Lib
+	modImplementation("dev.kosmx.player-anim:player-animation-lib-fabric:${project.player_anim}")
+
+	// Mixin Extras
+	api("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
+	annotationProcessor("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
+
+	// Tiny Config
+	implementation include("com.github.ZsoltMolnarrr:TinyConfig:${project.tiny_config_version}")
+
+	// Owo Lib
+	modImplementation "io.wispforest:owo-lib:${project.owo_version}"
+	// only if you plan to use owo-config
+	annotationProcessor "io.wispforest:owo-lib:${project.owo_version}"
+
+	// include this if you don't want force your users to install owo
+	// sentinel will warn them and give the option to download it automatically
+	include "io.wispforest:owo-sentinel:${project.owo_version}"
+
+	// Immersive Portals Core
+	modImplementation ("com.github.iPortalTeam.ImmersivePortalsMod:imm_ptl_core:${project.q_misc_util_version}"){
+		exclude(group: "net.fabricmc.fabric-api")
+		transitive(false)
+	}
+
+	// Miscellaneous Utility Library
+	modImplementation include("com.github.iPortalTeam.ImmersivePortalsMod:q_misc_util:${project.q_misc_util_version}"){
+		exclude(group: "net.fabricmc.fabric-api")
+		transitive(false)
+	}
+
+	// Cardinal Components
+	modImplementation ("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cca_version}")
+	modImplementation ("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cca_version}")
+
+	// Better Combat
+	modImplementation "maven.modrinth:better-combat:${project.better_combat}"
+
 }
 
 processResources {

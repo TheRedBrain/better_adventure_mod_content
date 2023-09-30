@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bamcontent:item/leather_gloves",
+    "layer1": "bamcontent:item/leather_gloves_overlay"
+  }
+}
