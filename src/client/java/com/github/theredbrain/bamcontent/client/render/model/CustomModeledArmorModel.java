@@ -1,6 +1,6 @@
 package com.github.theredbrain.bamcontent.client.render.model;
 //
-//import com.github.theredbrain.bamcore.item.CustomModeledArmorItem;
+//import com.github.theredbrain.bamcontent.item.CustomModeledArmorItem;
 //import net.minecraft.util.Identifier;
 //import software.bernie.geckolib.model.DefaultedItemGeoModel;
 //

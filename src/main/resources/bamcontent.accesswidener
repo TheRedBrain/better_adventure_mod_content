@@ -1,0 +1,18 @@
+accessWidener v1 named
+
+accessible method net/minecraft/client/world/ClientWorld getPendingUpdateManager ()Lnet/minecraft/client/network/PendingUpdateManager;
+
+accessible method net/minecraft/entity/player/PlayerEntity closeHandledScreen ()V
+
+accessible method net/minecraft/client/gui/screen/ingame/HandledScreen drawSlot (Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/screen/slot/Slot;)V
+extendable method net/minecraft/client/gui/screen/ingame/HandledScreen drawSlot (Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/screen/slot/Slot;)V
+
+accessible method net/minecraft/client/MinecraftClient doItemUse ()V
+
+accessible field net/minecraft/entity/LivingEntity syncedHandStacks Lnet/minecraft/util/collection/DefaultedList;
+mutable field net/minecraft/entity/LivingEntity syncedHandStacks Lnet/minecraft/util/collection/DefaultedList;
+accessible field net/minecraft/entity/LivingEntity syncedArmorStacks Lnet/minecraft/util/collection/DefaultedList;
+mutable field net/minecraft/entity/LivingEntity syncedArmorStacks Lnet/minecraft/util/collection/DefaultedList;
+
+accessible field net/minecraft/item/ArmorItem MODIFIERS Ljava/util/EnumMap;
+mutable field net/minecraft/item/ArmorItem MODIFIERS Ljava/util/EnumMap;

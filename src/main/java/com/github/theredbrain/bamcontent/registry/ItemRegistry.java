@@ -3,13 +3,12 @@ package com.github.theredbrain.bamcontent.registry;
 import com.github.theredbrain.bamcontent.BetterAdventureModeContent;
 import com.github.theredbrain.bamcontent.item.*;
 import com.github.theredbrain.bamcore.api.item.AdventureFoodConsumable;
+import com.github.theredbrain.bamcore.api.item.ArmorTrinketItem;
+import com.github.theredbrain.bamcore.api.item.CustomArmorItem;
 import dev.emi.trinkets.api.TrinketItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -24,23 +23,49 @@ import java.util.List;
 public class ItemRegistry {
 
     // armor
-    public static final Item LEATHER_GLOVES = registerItem("leather_gloves", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
-    public static final Item LEATHER_SHOULDERS = registerItem("leather_shoulders", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
+    // TODO
 
-    public static final Item CHAINMAIL_GLOVES = registerItem("chainmail_gloves", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
-    public static final Item CHAINMAIL_SHOULDERS = registerItem("chainmail_shoulders", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item LEATHER_HELMET = registerItem("leather_helmet", new CustomArmorItem(0.5, ArmorMaterials.LEATHER, ArmorItem.Type.HELMET, new FabricItemSettings().maxDamage(60)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item LEATHER_CHESTPLATE = registerItem("leather_chestplate", new CustomArmorItem(1, ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().maxDamage(60)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item LEATHER_LEGGINGS = registerItem("leather_leggings", new CustomArmorItem(1, ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS, new FabricItemSettings().maxDamage(60)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item LEATHER_BOOTS = registerItem("leather_boots", new CustomArmorItem(0.5, ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS, new FabricItemSettings().maxDamage(60)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item LEATHER_GLOVES = registerItem("leather_gloves", new ArmorTrinketItem(1, 0, 0.5, new FabricItemSettings().maxDamage(60)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item LEATHER_SHOULDERS = registerItem("leather_shoulders", new ArmorTrinketItem(1, 0, 0.5, new FabricItemSettings().maxDamage(60)), ItemGroupRegistry.BAM_EQUIPMENT);
 
-    public static final Item IRON_GLOVES = registerItem("iron_gloves", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
-    public static final Item IRON_SHOULDERS = registerItem("iron_shoulders", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item CHAINMAIL_HELMET = registerItem("chainmail_helmet", new CustomArmorItem(1, ArmorMaterials.CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings().maxDamage(70)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item CHAINMAIL_CHESTPLATE = registerItem("chainmail_chestplate", new CustomArmorItem(2, ArmorMaterials.CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().maxDamage(70)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item CHAINMAIL_LEGGINGS = registerItem("chainmail_leggings", new CustomArmorItem(2, ArmorMaterials.CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings().maxDamage(70)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item CHAINMAIL_BOOTS = registerItem("chainmail_boots", new CustomArmorItem(1, ArmorMaterials.CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings().maxDamage(70)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item CHAINMAIL_GLOVES = registerItem("chainmail_gloves", new ArmorTrinketItem(1, 0, 1, new FabricItemSettings().maxDamage(70)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item CHAINMAIL_SHOULDERS = registerItem("chainmail_shoulders", new ArmorTrinketItem(1, 0, 1, new FabricItemSettings().maxDamage(70)), ItemGroupRegistry.BAM_EQUIPMENT);
 
-    public static final Item DIAMOND_GLOVES = registerItem("diamond_gloves", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
-    public static final Item DIAMOND_SHOULDERS = registerItem("diamond_shoulders", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item IRON_HELMET = registerItem("iron_helmet", new CustomArmorItem(2, ArmorMaterials.IRON, ArmorItem.Type.HELMET, new FabricItemSettings().maxDamage(90)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item IRON_CHESTPLATE = registerItem("iron_chestplate", new CustomArmorItem(4, ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().maxDamage(90)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item IRON_LEGGINGS = registerItem("iron_leggings", new CustomArmorItem(4, ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS, new FabricItemSettings().maxDamage(90)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item IRON_BOOTS = registerItem("iron_boots", new CustomArmorItem(2, ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new FabricItemSettings().maxDamage(90)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item IRON_GLOVES = registerItem("iron_gloves", new ArmorTrinketItem(2, 0, 2, new FabricItemSettings().maxDamage(90)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item IRON_SHOULDERS = registerItem("iron_shoulders", new ArmorTrinketItem(2, 0, 2, new FabricItemSettings().maxDamage(90)), ItemGroupRegistry.BAM_EQUIPMENT);
 
-    public static final Item GOLDEN_GLOVES = registerItem("golden_gloves", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
-    public static final Item GOLDEN_SHOULDERS = registerItem("golden_shoulders", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item DIAMOND_HELMET = registerItem("diamond_helmet", new CustomArmorItem(1.5, ArmorMaterials.DIAMOND, ArmorItem.Type.HELMET, new FabricItemSettings().maxDamage(40)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item DIAMOND_CHESTPLATE = registerItem("diamond_chestplate", new CustomArmorItem(3, ArmorMaterials.DIAMOND, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().maxDamage(40)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item DIAMOND_LEGGINGS = registerItem("diamond_leggings", new CustomArmorItem(3, ArmorMaterials.DIAMOND, ArmorItem.Type.LEGGINGS, new FabricItemSettings().maxDamage(40)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item DIAMOND_BOOTS = registerItem("diamond_boots", new CustomArmorItem(1.5, ArmorMaterials.DIAMOND, ArmorItem.Type.BOOTS, new FabricItemSettings().maxDamage(40)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item DIAMOND_GLOVES = registerItem("diamond_gloves", new ArmorTrinketItem(3, 0.025, 1.5, new FabricItemSettings().maxDamage(40)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item DIAMOND_SHOULDERS = registerItem("diamond_shoulders", new ArmorTrinketItem(3, 0.025, 1.5, new FabricItemSettings().maxDamage(40)), ItemGroupRegistry.BAM_EQUIPMENT);
 
-    public static final Item NETHERITE_GLOVES = registerItem("netherite_gloves", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
-    public static final Item NETHERITE_SHOULDERS = registerItem("netherite_shoulders", new ArmorTrinketItem(new FabricItemSettings().maxCount(1)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item GOLDEN_HELMET = registerItem("golden_helmet", new CustomArmorItem(2.5, ArmorMaterials.GOLD, ArmorItem.Type.HELMET, new FabricItemSettings().maxDamage(50)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item GOLDEN_CHESTPLATE = registerItem("golden_chestplate", new CustomArmorItem(5, ArmorMaterials.GOLD, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().maxDamage(50)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item GOLDEN_LEGGINGS = registerItem("golden_leggings", new CustomArmorItem(5, ArmorMaterials.GOLD, ArmorItem.Type.LEGGINGS, new FabricItemSettings().maxDamage(50)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item GOLDEN_BOOTS = registerItem("golden_boots", new CustomArmorItem(2.5, ArmorMaterials.GOLD, ArmorItem.Type.BOOTS, new FabricItemSettings().maxDamage(50)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item GOLDEN_GLOVES = registerItem("golden_gloves", new ArmorTrinketItem(1, 0, 2.5, new FabricItemSettings().maxDamage(50)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item GOLDEN_SHOULDERS = registerItem("golden_shoulders", new ArmorTrinketItem(1, 0, 2.5, new FabricItemSettings().maxDamage(50)), ItemGroupRegistry.BAM_EQUIPMENT);
+
+    public static final Item NETHERITE_HELMET = registerItem("netherite_helmet", new CustomArmorItem(3, ArmorMaterials.NETHERITE, ArmorItem.Type.HELMET, new FabricItemSettings().maxDamage(120)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item NETHERITE_CHESTPLATE = registerItem("netherite_chestplate", new CustomArmorItem(6, ArmorMaterials.NETHERITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().maxDamage(120)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item NETHERITE_LEGGINGS = registerItem("netherite_leggings", new CustomArmorItem(6, ArmorMaterials.NETHERITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().maxDamage(120)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item NETHERITE_BOOTS = registerItem("netherite_boots", new CustomArmorItem(3, ArmorMaterials.NETHERITE, ArmorItem.Type.BOOTS, new FabricItemSettings().maxDamage(120)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item NETHERITE_GLOVES = registerItem("netherite_gloves", new ArmorTrinketItem(4, 0.05, 3, new FabricItemSettings().maxDamage(120)), ItemGroupRegistry.BAM_EQUIPMENT);
+    public static final Item NETHERITE_SHOULDERS = registerItem("netherite_shoulders", new ArmorTrinketItem(5, 0.05, 3, new FabricItemSettings().maxDamage(120)), ItemGroupRegistry.BAM_EQUIPMENT);
 
     // --- accessories ---
     // belts

@@ -1,7 +1,7 @@
 package com.github.theredbrain.bamcontent.client.render.renderer;
 //
-//import com.github.theredbrain.bamcore.client.render.model.CustomModeledArmorModel;
-//import com.github.theredbrain.bamcore.item.CustomModeledArmorItem;
+//import com.github.theredbrain.bamcontent.client.render.model.CustomModeledArmorModel;
+//import com.github.theredbrain.bamcontent.item.CustomModeledArmorItem;
 //import net.minecraft.client.render.RenderLayer;
 //import net.minecraft.client.render.VertexConsumerProvider;
 //import net.minecraft.util.Identifier;

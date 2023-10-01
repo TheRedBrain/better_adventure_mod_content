@@ -78,7 +78,7 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
-
+	accessWidenerPath = file("src/main/resources/bamcontent.accesswidener")
 }
 
 dependencies {
@@ -101,11 +101,11 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
-	// BamCore
+	// Trinkets
 	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
 
-	// Trinkets
-	modImplementation "lib:better_adventure_mod_core:0.0.1"
+	// BamCore
+	modImplementation "lib:better_adventure_mode_core:${project.bamcore_version}"
 
 	// Gecko Lib
 	modImplementation "software.bernie.geckolib:geckolib-fabric-1.20.1:${project.gecko_lib_version}"

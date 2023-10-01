@@ -1,15 +1,14 @@
 package com.github.theredbrain.bamcontent.item;
 //
+//import com.github.theredbrain.bamcore.api.item.CustomArmorItem;
 //import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 //import net.minecraft.entity.Entity;
 //import net.minecraft.entity.EquipmentSlot;
 //import net.minecraft.entity.LivingEntity;
 //import net.minecraft.entity.decoration.ArmorStandEntity;
-//import net.minecraft.item.ArmorItem;
 //import net.minecraft.item.ArmorMaterial;
 //import net.minecraft.item.Item;
 //import net.minecraft.item.ItemStack;
-//import net.minecraft.registry.tag.TagKey;
 //import net.minecraft.util.Identifier;
 //import software.bernie.geckolib.animatable.GeoItem;
 //import software.bernie.geckolib.animatable.client.RenderProvider;
@@ -30,11 +29,9 @@ package com.github.theredbrain.bamcontent.item;
 //    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 //    private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
 //    private final Identifier assetSubpath;
-//    private final TagKey<Item> armorSet;
-//    public CustomModeledArmorItem(TagKey<Item> armorSet, Identifier assetSubpath, int poise, int weight, ArmorMaterial material, Type type, Settings settings) {
+//    public CustomModeledArmorItem(Identifier assetSubpath, int poise, int weight, ArmorMaterial material, Type type, Settings settings) {
 //        super(poise, weight, material, type, settings);
 //        this.assetSubpath = assetSubpath;
-//        this.armorSet = armorSet;
 //    }
 //
 //    // Create our armor model/renderer for Fabric and return it
@@ -91,7 +88,7 @@ package com.github.theredbrain.bamcontent.item;
 //                if (stack.isEmpty())
 //                    return PlayState.STOP;
 //
-//                isFullSet = stack.isIn(armorSet);
+////                isFullSet = stack.isIn(armorSet);
 ////                wornArmor.add(stack.getItem());
 //            }
 //
@@ -105,7 +102,7 @@ package com.github.theredbrain.bamcontent.item;
 ////                    ItemRegistry.CUSTOM_IRON_SHOULDERS));
 //
 //            // Play the animation if the full set is being worn, otherwise stop
-//            return isFullSet ? PlayState.CONTINUE : PlayState.STOP;
+////            return isFullSet ? PlayState.CONTINUE : PlayState.STOP;
 //        }));
 //    }
 //

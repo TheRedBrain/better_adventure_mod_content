@@ -18,15 +18,15 @@ public class ItemGroupRegistry {
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, BAM_BLOCK, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(ItemRegistry.ZWEIHANDER))
-                .displayName(Text.translatable("itemGroup.bamcore.bam_block"))
+                .displayName(Text.translatable("itemGroup.bamcontent.bam_block"))
                 .build());
         Registry.register(Registries.ITEM_GROUP, BAM_EQUIPMENT, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(ItemRegistry.ZWEIHANDER))
-                .displayName(Text.translatable("itemGroup.bamcore.bam_equipment"))
+                .displayName(Text.translatable("itemGroup.bamcontent.bam_equipment"))
                 .build());
         Registry.register(Registries.ITEM_GROUP, BAM_FOOD, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(ItemRegistry.ZWEIHANDER))
-                .displayName(Text.translatable("itemGroup.bamcore.bam_food"))
+                .displayName(Text.translatable("itemGroup.bamcontent.bam_food"))
                 .build());
     }
 }

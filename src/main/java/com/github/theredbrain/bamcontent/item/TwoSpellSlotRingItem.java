@@ -1,6 +1,6 @@
 package com.github.theredbrain.bamcontent.item;
 
-import com.github.theredbrain.bamcore.registry.EntityAttributesRegistry;
+import com.github.theredbrain.bamcore.api.util.BetterAdventureModeEntityAttributes;
 import com.github.theredbrain.bamcore.util.AttributeModifierUUIDs;
 import com.google.common.collect.Multimap;
 import dev.emi.trinkets.api.SlotReference;
@@ -26,12 +26,12 @@ public class TwoSpellSlotRingItem extends TrinketItem {
         Multimap<EntityAttribute, EntityAttributeModifier> map = super.getModifiers(stack, slot, entity, uuid);
         switch (slot.inventory().getSlotType().getGroup()) {
             case "rings_1":
-                map.put(EntityAttributesRegistry.ACTIVE_SPELL_SLOT_AMOUNT,
+                map.put(BetterAdventureModeEntityAttributes.ACTIVE_SPELL_SLOT_AMOUNT,
                         new EntityAttributeModifier(UUID.fromString(AttributeModifierUUIDs.RING_SLOT_1),
                                 "active_spell_slot_amount", 3.0, EntityAttributeModifier.Operation.ADDITION));
                 break;
             case "rings_2":
-                map.put(EntityAttributesRegistry.ACTIVE_SPELL_SLOT_AMOUNT,
+                map.put(BetterAdventureModeEntityAttributes.ACTIVE_SPELL_SLOT_AMOUNT,
                         new EntityAttributeModifier(UUID.fromString(AttributeModifierUUIDs.RING_SLOT_2),
                                 "active_spell_slot_amount", 3.0, EntityAttributeModifier.Operation.ADDITION));
                 break;
