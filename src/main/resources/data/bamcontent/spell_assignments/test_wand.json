@@ -1,0 +1,4 @@
+{
+  "is_proxy": true,
+  "proxyPool": ["bamcontent:test_wand_pool"]
+}
